@@ -18,6 +18,7 @@ const raisedToTheThird = (arr) => {
   return numPowThird;
 }
 
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -95,8 +96,10 @@ forEachTwoToThe function from challenge 5, but uses map instead of a for loop or
 ------------------------------------------------------------------------------------------------ */
 
 const mapTwoToThe = (arr) => {
-  return arr.map((number) => Math.pow(2, number));
+  const mapArr = arr.map((number) => Math.pow(2, number));
+  return mapArr;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
@@ -111,7 +114,7 @@ For example: charCode(['h','i']) returns [104, 105].
 ------------------------------------------------------------------------------------------------ */
 
 const charCode = (arr) => {
-  
+
 };
 
 /* ------------------------------------------------------------------------------------------------
