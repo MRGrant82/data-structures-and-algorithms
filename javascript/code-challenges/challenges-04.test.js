@@ -39,14 +39,6 @@ For example: 'Cat' would come before 'apple'
 
 const sortNames = (arr) => {
   arr.sort(function(name1, name2) {
-    const name1Lower = name1.toLowerCase();
-    const name2Lower = name2.toLowerCase();
-    if (name1Lower < name2Lower) {
-      return -1;
-    }
-    if (name1Lower > name2Lower) {
-      return 1;
-    }
     if (name1 < name2) {
       return -1;
     }
@@ -57,6 +49,7 @@ const sortNames = (arr) => {
   });
   return arr;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -102,12 +95,6 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 
 const alphabetize = (arr) => {
   arr.sort(function(str1, str2) {
-    if (str1.toLowerCase() < str2.toLowerCase()) {
-      return -1;
-    }
-    if (str1.toLowerCase() > str2.toLowerCase()) {
-      return 1;
-    }
     if (str1 < str2) {
       return -1;
     }
@@ -118,6 +105,7 @@ const alphabetize = (arr) => {
   });
   return arr;
 };
+
 
 
 /* ------------------------------------------------------------------------------------------------
