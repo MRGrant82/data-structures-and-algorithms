@@ -78,7 +78,7 @@ const addBirthYearProperty = (obj, year) => {
 };
 
 
-/* ------------------------------------------------------------------------------------------------
+/* ------------------------------------------------------------------------------------------------ls
 CHALLENGE 5 - Stretch Goal
 
 Write a function that accepts an array of people objects and adds a new property called isAuthor to each object in the list. Set the value of the new property to true.
