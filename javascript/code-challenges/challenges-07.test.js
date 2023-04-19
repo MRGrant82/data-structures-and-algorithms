@@ -25,7 +25,9 @@ let starWarsPeople = [
 ];
 
 const sortStarWarsCharacters = (starWarsArr) => {
-  // Solution code here....
+  return starWarsArr.sort((a, b) => {
+    return parseInt(b.height) - parseInt(a.height);
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -35,8 +37,13 @@ Write a function named removeThree that takes an index and an array. The functio
 ------------------------------------------------------------------------------------------------ */
 
 const removeThree = (idx, arr) => {
-  // Solution code here...
+  if (idx < 0 || idx + 2 >= arr.length) {
+    return null;
+  }
+  arr.splice(idx, 3);
+  return arr;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -45,7 +52,7 @@ Write a function named joinArray that takes an array and joins all of the elemen
 ------------------------------------------------------------------------------------------------ */
 
 const joinArray = (arr) => {
-  // Solution code here...
+  return arr.join(' ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -63,7 +70,11 @@ For example, if the input is 'Welcome', the output will be:
 
 const howMuchPencil = (str) => {
   let result = [];
-  // Solution code here...
+
+  for (let i = 0; i <= str.length; i++) {
+    result.push(str.slice(i));
+  }
+
   return result;
 };
 
@@ -76,8 +87,13 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
 const wordsToCharList = (arr) => {
-  // Solution code here...
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    result.push(arr[i]);
+  }
+  return result;
 };
+
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -120,12 +136,30 @@ const gruffaloCrumble = {
   ]
 };
 
-
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+
+  recipe.ingredients.forEach(ingredient => {
+    let name = ingredient.split(' ').slice(2).join(' ');
+    result.push(name);
+  });
+
   return result;
 };
+
+// const listFoods = (recipe) => {
+//   let result = [];
+//   recipe.ingredients.forEach(ingredient => {
+//     const start = ingredient.indexOf(' ') + 1;
+//     const end = ingredient.lastIndexOf(' ');
+//     const food = ingredient.slice(start, end);
+//     result.push(food);
+//   });
+//   return result;
+// };
+
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
