@@ -2,7 +2,7 @@
 
 /* ------------------------------------------------------------------------------------------------
 
-CHALLENGE 1 - Review a
+CHALLENGE 1 - Review
 
 Write a function named sortByChildren that sorts the characters below by the number of children in each house (fewest to most). If a house has the same number of children, sort alphabetically by house name.
 
@@ -53,9 +53,30 @@ let characters = [
 ];
 
 const sortByChildren = (charArray) => {
-  // Solution code here...
-};
+  charArray.sort((charA, charB) => {
+    const regex = /[\w\s]+/g;
+    const numChildrenA = charA.children.length;
+    const numChildrenB = charB.children.length;
+    const houseA = charA.house.match(regex)[0];
+    const houseB = charB.house.match(regex)[0];
 
+    if (numChildrenA < numChildrenB) {
+      return -1;
+    } else if (numChildrenA > numChildrenB) {
+      return 1;
+    } else {
+      if (houseA < houseB) {
+        return -1;
+      } else if (houseA > houseB) {
+        return 1;
+      } else {
+        return 0;
+      }
+    }
+  });
+
+  return charArray;
+};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -64,8 +85,10 @@ Write a function named containsW that takes in a string. This function should us
 ------------------------------------------------------------------------------------------------ */
 
 const containsW = (str) => {
-  // Solution code here...
+  const regex = /w/;
+  return regex.test(str);
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -80,8 +103,10 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const isNum = (input) => {
-  // Solution code here...
+  const regex = /\d/;
+  return regex.test(input);
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -91,8 +116,10 @@ Write a function named containsWorld that takes in a string or number of any len
 ------------------------------------------------------------------------------------------------ */
 
 const containsWorld = (input) => {
-  // Solution code here...
+  const regex = /\bworld\b/;
+  return regex.test(input);
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -103,8 +130,10 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  // Solution code here...
+  const regex = /\b[A-Z]\w*\b/g;
+  return str.match(regex);
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -113,8 +142,10 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+  const regex = /^[A-J]/;
+  return arr.filter(city => regex.test(city));
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
